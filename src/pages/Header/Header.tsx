@@ -17,9 +17,7 @@ const Header: React.FC = () => {
     <header className="header">
       <nav className="navbar">
         <div className="navbar-logo">
-          <Link to="/" className="logo">
-            Logo
-          </Link>
+            <img className="logo" src="https://raw.githubusercontent.com/jhoan9/Images/main/images/logoPersonal.png" alt="logo" />
         </div>
         <ul className="navbar-menu">
           <li>
@@ -27,9 +25,6 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link to="/about">Acerca de</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contacto</Link>
           </li>
         </ul>
         <div className="navbar-toggle">

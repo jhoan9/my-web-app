@@ -43,7 +43,7 @@ const About: React.FC = () => {
         <div className="about-photo">
           <img
             className="photo"
-            src="https://media.licdn.com/dms/image/C4E03AQHU-GO3IuHRsg/profile-displayphoto-shrink_800_800/0/1624927068008?e=2147483647&v=beta&t=yPkC9E_yWChaxzSRMt-xSIBkBJAAxVUdGiXuwug9GFQ"
+            src="https://media.licdn.com/dms/image/D5603AQHw_twFv3oOzA/profile-displayphoto-shrink_800_800/0/1699911730493?e=1712188800&v=beta&t=rkzjFueHnAmlX86DNc0jXQRcVVZOoUIZTGGeW2uyu8w"
             alt="Jhoan"
           />
         </div>

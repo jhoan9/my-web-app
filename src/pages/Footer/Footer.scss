@@ -1,6 +1,7 @@
 .footer {
-  background-color: #f2f2f2;
+  background: linear-gradient(to bottom, white, #dedddd 20%, #9d9c9c 65%, #8c8b8b 75%, #4d4b4b);
   padding: 20px 0;
+  background-size: 100% 100%;
 }
 
 .container {
@@ -24,7 +25,7 @@
 
 .footer-column h3,
 .footer-column h4 {
-  color: #333;
+  color: #090909;
 }
 
 .footer-column ul {
@@ -37,12 +38,12 @@
 }
 
 .footer-column ul li a {
-  color: #666;
+  color: #000000;
   text-decoration: none;
 }
 
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
-  color: #666;
+  color: #000000;
 }

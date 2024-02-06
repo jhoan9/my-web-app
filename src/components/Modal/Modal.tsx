@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Modal.scss";
 import { Link } from "react-router-dom";
 
@@ -24,9 +24,6 @@ const Modal: React.FC<ModalProps> = ({isOpen, onClose}) => {
               </li>
               <li className="item-list">
                 <Link className="link-menu" onClick={onClose} to="/about">Acerca de</Link>
-              </li>
-              <li className="item-list">
-                <Link className="link-menu" onClick={onClose} to="/contact">Contacto</Link>
               </li>
             </ul>
           </div>
