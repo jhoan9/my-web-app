@@ -8,15 +8,29 @@ const WelcomeModal = () => {
 
   useEffect(() => {
     if (isOpen) {
-      const greetingText = ['B', 'i', 'e', 'n', 'v', 'e', 'n', 'i', 'd', 'o', '(a)' ];
+      const greetingText = [
+        "B",
+        "i",
+        "e",
+        "n",
+        "v",
+        "e",
+        "n",
+        "i",
+        "d",
+        "@"
+      ];
       const intervalId = setInterval(() => {
         if (currentIndex < greetingText.length) {
-          setGreeting((prevGreeting) => [...prevGreeting, greetingText[currentIndex]]);
+          setGreeting((prevGreeting) => [
+            ...prevGreeting,
+            greetingText[currentIndex],
+          ]);
           setCurrentIndex((prevIndex) => prevIndex + 1);
         } else {
           clearInterval(intervalId);
         }
-      }, 150);
+      }, 250);
 
       return () => {
         clearInterval(intervalId);
@@ -30,14 +44,20 @@ const WelcomeModal = () => {
 
   return (
     <>
-      {isOpen && (
+    {isOpen && (
         <div className="welcome-modal">
-          <div className="welcome-container">
-            <div className="greeting">{greeting.join("")}</div>
-            <button onClick={closeModal}>Cerrar</button>
-          </div>
+            <div className="welcome-container">
+                <div className="greeting">
+                    {greeting.map((letter, index) => (
+                        <span className="letters" key={index}>
+                            {letter}
+                        </span> /* Cada letra envuelta en un span */
+                    ))}
+                </div>
+                <button className="btn-close" onClick={closeModal}>Cerrar</button>
+            </div>
         </div>
-      )}
+    )}
     </>
   );
 };
