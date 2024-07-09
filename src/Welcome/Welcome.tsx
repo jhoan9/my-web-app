@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AppContext } from '../context/AppContext';
 import "./Welcome.scss";
 
 const WelcomeModal = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const { values, setValue } = useContext(AppContext);
+  const [isOpen, setIsOpen] = useState<boolean>(()=>values["Welcome"] !== "Closed");
   const [greeting, setGreeting] = useState<String[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -18,7 +20,7 @@ const WelcomeModal = () => {
         "n",
         "i",
         "d",
-        "@"
+        "o"
       ];
       const intervalId = setInterval(() => {
         if (currentIndex < greetingText.length) {
@@ -30,7 +32,7 @@ const WelcomeModal = () => {
         } else {
           clearInterval(intervalId);
         }
-      }, 250);
+      }, 100);
 
       return () => {
         clearInterval(intervalId);
@@ -40,6 +42,7 @@ const WelcomeModal = () => {
 
   const closeModal = () => {
     setIsOpen(false);
+    setValue("Welcome", "Closed");
   };
 
   return (

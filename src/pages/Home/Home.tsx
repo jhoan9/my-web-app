@@ -11,7 +11,7 @@ const Home: React.FC = () => {
         <div className="left">
           <h1 className="name">Jhoan Castro Santacruz</h1>
           <p className="description">
-            Creación de soluciones de software personalizadas con enfoque en el
+            Creador de soluciones de software personalizadas con enfoque en el
             desarrollo de Java Spring Boot, desarrollo de bots de WhatsApp y
             desarrollo web con Ionic y React TS. Con más de dos años de
             experiencia en la industria, mi pasión es innovar y crear soluciones
@@ -20,7 +20,7 @@ const Home: React.FC = () => {
         </div>
         <div className="right">
           <img
-            src="https://media.licdn.com/dms/image/D5603AQHw_twFv3oOzA/profile-displayphoto-shrink_800_800/0/1699911730493?e=1712188800&v=beta&t=rkzjFueHnAmlX86DNc0jXQRcVVZOoUIZTGGeW2uyu8w"
+            src="https://plus.unsplash.com/premium_photo-1673643405538-de0f82933fcb?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Imagen de perfil"
           />
         </div>

@@ -9,13 +9,13 @@ const Footer: React.FC = () => {
         <div className="footer-content">
           <div className="footer-column">
             <h3>Jhoan Castro Santacruz</h3>
-            <p>Bienvenidos a mi portafolio web, encontraras información de acerca de mi </p>
+            <p>Bienvenidos a mi portafolio web, encontrarás información sobre mí.</p>
           </div>
           <div className="footer-column">
             <h4>Contacto</h4>
             <p>Popayán Cauca</p>
-            <p>318 6046846</p>
-            <p>cjhoan735@gmail.com</p>
+            <p><a href="tel:+573186046846">318 6046846</a></p>
+            <p><a href="mailto:cjhoan735@gmail.com">cjhoan735@gmail.com</a></p>
           </div>
           <div className="footer-column">
             <h4>Enlaces</h4>
