@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./Header.scss";
 import { Link } from "react-router-dom";
 import Modal from "../../components/Modal/Modal";
+import "./Header.scss";
 
 const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,11 +13,19 @@ const Header: React.FC = () => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+
   return (
     <header className="header">
       <nav className="navbar">
         <div className="navbar-logo">
-            <img className="logo" src="https://raw.githubusercontent.com/jhoan9/Images/main/images/logoPersonal.png" alt="logo" />
+          <div className="logo-container">
+            <div className="atom">
+              <div className="electron"></div>
+              <div className="electron"></div>
+              <div className="electron"></div>
+              <div className="nucleus">JCS</div>
+            </div>
+          </div>
         </div>
         <ul className="navbar-menu">
           <li>
@@ -27,8 +35,9 @@ const Header: React.FC = () => {
             <Link to="/about">Acerca de</Link>
           </li>
         </ul>
-        <div className="navbar-toggle">
-          <span className="toggle-icon" onClick={handleOpenModal}></span>
+        {/* Button to open the modal, only visible on mobile */}
+        <div className="modal-toggle" onClick={handleOpenModal}>
+          Abrir
         </div>
       </nav>
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} />

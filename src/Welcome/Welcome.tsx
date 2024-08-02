@@ -4,24 +4,13 @@ import "./Welcome.scss";
 
 const WelcomeModal = () => {
   const { values, setValue } = useContext(AppContext);
-  const [isOpen, setIsOpen] = useState<boolean>(()=>values["Welcome"] !== "Closed");
-  const [greeting, setGreeting] = useState<String[]>([]);
+  const [isOpen, setIsOpen] = useState<boolean>(() => values["Welcome"] !== "Closed");
+  const [greeting, setGreeting] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (isOpen) {
-      const greetingText = [
-        "B",
-        "i",
-        "e",
-        "n",
-        "v",
-        "e",
-        "n",
-        "i",
-        "d",
-        "o"
-      ];
+      const greetingText = "Bienvenido".split("");
       const intervalId = setInterval(() => {
         if (currentIndex < greetingText.length) {
           setGreeting((prevGreeting) => [
@@ -47,20 +36,20 @@ const WelcomeModal = () => {
 
   return (
     <>
-    {isOpen && (
+      {isOpen && (
         <div className="welcome-modal">
-            <div className="welcome-container">
-                <div className="greeting">
-                    {greeting.map((letter, index) => (
-                        <span className="letters" key={index}>
-                            {letter}
-                        </span> /* Cada letra envuelta en un span */
-                    ))}
-                </div>
-                <button className="btn-close" onClick={closeModal}>Cerrar</button>
+          <div className="welcome-container">
+            <div className="greeting">
+              {greeting.map((letter, index) => (
+                <span className="letters" key={index}>
+                  {letter}
+                </span>
+              ))}
             </div>
+            <button className="btn-close" onClick={closeModal}>Cerrar</button>
+          </div>
         </div>
-    )}
+      )}
     </>
   );
 };

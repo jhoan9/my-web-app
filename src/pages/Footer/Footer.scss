@@ -1,76 +1,88 @@
 .footer {
-  background: linear-gradient(to bottom, white, #dedddd 20%, #9d9c9c 65%, #8c8b8b 75%, #4d4b4b);
+  background: #333333;
+  color: #ffffff;
   padding: 40px 0;
-  background-size: 100% 100%;
-  color: #333333; 
   font-family: 'Arial', sans-serif;
-}
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
-.footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.footer-column {
-  flex: 1 1 300px;
-  margin-bottom: 20px;
-}
-
-.footer-column h3, .footer-column h4 {
-  color: #333333; 
-  margin-bottom: 15px;
-}
-
-.footer-column p, .footer-column a {
-  color: #666666; 
-}
-
-.footer-column a:hover {
-  color: #000000; 
-  text-decoration: underline;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-column ul li {
-  margin-bottom: 10px;
-}
-
-.footer-column ul li a {
-  color: #666666;
-  text-decoration: none;
-}
-
-.footer-column ul li a:hover {
-  color: #000000;
-  text-decoration: underline;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  color: #333333;
-  font-size: 0.9em;
-}
-
-@media (max-width: 768px) {
   .footer-content {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
   }
 
   .footer-column {
+    margin-bottom: 20px;
+
+    h3, h4 {
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    p, a {
+      color: #cccccc;
+    }
+
+    a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    ul li a {
+      color: #cccccc;
+      text-decoration: none;
+    }
+
+    ul li a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  }
+
+  .footer-bottom {
     text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #cccccc;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;  // Reduce gap between columns
+    }
+
+    .footer-column {
+      text-align: center;
+      margin-bottom: 10px;  // Reduce margin bottom for each column
+    }
+
+    h3, h4 {
+      margin-bottom: 10px;  // Reduce margin bottom for headings
+    }
+
+    p {
+      margin-bottom: 8px;  // Reduce margin bottom for paragraphs
+    }
+
+    ul li {
+      margin-bottom: 5px;  // Reduce margin bottom for list items
+    }
   }
 }

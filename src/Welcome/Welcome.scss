@@ -1,24 +1,23 @@
 @keyframes fallAnimation {
   0% {
-    transform: translateY(-100px); /* Empieza arriba */
-    opacity: 0; /* Comienza invisible */
+    transform: translateY(-100px);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0); /* Llega abajo */
-    opacity: 1; /* Es completamente visible */
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-/* Animación para la letra mientras cae */
 @keyframes flameAnimation {
   0%,
   100% {
-    color: rgb(9, 0, 112); /* Inicial y final del color de llama */
-    text-shadow: 0 0 5px rgba(0, 174, 255, 0.5); /* Sombra de llama */
+    color: rgb(9, 0, 112);
+    text-shadow: 0 0 5px rgba(0, 174, 255, 0.5);
   }
   50% {
-    color: rgb(123, 123, 123); /* Color intermedio de llama */
-    text-shadow: 0 0 15px rgba(0, 13, 255, 0.5); /* Sombra de llama más intensa */
+    color: rgb(123, 123, 123);
+    text-shadow: 0 0 15px rgba(0, 13, 255, 0.5);
   }
 }
 
@@ -28,54 +27,50 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.685);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
+
   .welcome-container {
-    align-items: center;
-    background-color: white;
-    border: 1px solid #000;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    height: 80%;
-    justify-content: center;
-    padding: 20px;
-    width: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fallAnimation 0.5s ease-in-out;
+
     .greeting {
-      align-items: center;
       display: flex;
-      font-size: 50px;
-      height: 90%;
       justify-content: center;
-      width: 100%;
+      font-size: 3rem;
+      margin-bottom: 30px;
+      color: #2c3e50;
+
       .letters {
-        display: inline-block; /* Hace que las letras caigan individualmente */
-        animation: fallAnimation 0.25s ease-in-out; /* Agrega la animación de caída */
-        animation-fill-mode: forwards; /* Mantén la posición final */
-      }
-      .letters:not(.final) {
-        animation: flameAnimation 1s ease-in-out infinite,
-          fallAnimation 1s ease-in-out; /* Combina ambas animaciones */
-        animation-fill-mode: forwards; /* Mantén la posición final */
+        display: inline-block;
+        animation: flameAnimation 1s ease-in-out infinite, fallAnimation 0.5s ease-in-out;
+        animation-fill-mode: forwards;
+        margin: 0 2px;
       }
     }
-    .btn-close{
-        top: 10px;
-        right: 10px;
-        background-color: #18009e;
-        border: none;
-        color: #fff;
-        font-size: 20px;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        &:hover{
-            background-color: #a2a2a2;
-            color: #000;
-        }
+
+    .btn-close {
+      background-color: #2980b9;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #3498db;
+      }
     }
   }
 }
