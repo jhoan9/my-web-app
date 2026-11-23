@@ -1,0 +1,63 @@
+/* Page CSS: only what the kit (public/assets) leaves to the page. */
+
+/* React's mount point stays out of the layout, so header.nav, main and footer.closing act as body's children */
+#root { display: contents; }
+
+/* one look for the main action: the lit grounds (the hero's field, the statement footer) keep the page's blue button */
+.hero.bg-field, footer.footer--statement { --action: var(--p-action); --action-ink: var(--p-action-ink); }
+
+/* the hero's terminal takes the window's full width, so its lines never cut */
+.hero--centred .hero__window > .ly-piece > .ui { width: 100%; max-width: none; }
+
+/* a row's detail line sits under its name, in the body size */
+.rows__name small { display: block; margin-top: var(--s-1); font-weight: 400; font-size: var(--t-body); color: var(--ink); }
+
+/* the two diagram cards: the panel takes the column's height beside the text */
+#experiencia .panel,
+#sobre-mi .panel { --p-h: 560px; }
+
+/* the portrait fills the split's right column, as tall as the rows beside it */
+#trayectoria .frame--photo { height: min(600px, var(--ly-fit, 600px)); }
+
+/* the closing grid never grows past the .wrap because of the name set in one line, and the name never clips */
+footer.closing > .wrap { grid-template-columns: minmax(0, 1fr); }
+.close__word { overflow: visible; }
+
+/* a tablet: the splits stack */
+@media (max-width: 1023px) {
+  #experiencia .panel,
+  #sobre-mi .panel { --p-h: 380px; margin-top: var(--s-7); }
+  #trayectoria .frame--photo { height: auto; aspect-ratio: 4 / 3; margin-top: var(--s-7); }
+}
+
+/* a tablet: the SDD steps rest as rows (the moment runs from 1024px). Held upright and tall (820x1180) they fit one
+   screen with tighter steps; on a shorter tablet (768x1024) the section takes two screens */
+@media (min-width: 640px) and (max-width: 1023px) {
+  #metodo:not(.is-live) .mo-pc__steps { gap: var(--s-4); }
+  #metodo:not(.is-live) .mo-pc__step { padding-top: var(--s-4); }
+}
+@media (min-width: 640px) and (max-width: 1023px) and (max-height: 1100px) {
+  main > #metodo[data-moment]:not(.is-live) { min-height: 200vh; min-height: 200svh; }
+  #metodo:not(.is-live) .mo-pc__visual { min-height: 340px; display: grid; align-content: center; }
+}
+
+/* a phone */
+@media (max-width: 639px) {
+  .hero--centred .hero__c > .pill { justify-self: stretch; justify-content: center; }
+
+  /* each row's value goes under its name, so no second column starts off the split lines */
+  .rows > li { grid-template-columns: minmax(0, 1fr); }
+  .rows__value { grid-column: 1; grid-row: auto; justify-self: start; text-align: left; white-space: nowrap; }
+
+  /* the current job and the projects take two screens each; the portrait takes what the list leaves */
+  #experiencia, #trayectoria { --hm: 2; }
+  #experiencia .wrap > .fill { flex: 0 0 auto; }
+  #experiencia .panel { --p-h: 780px; margin-top: var(--s-6); background: var(--p-surface); }
+  #trayectoria .wrap > .fill { flex: 1 1 auto; grid-template-rows: auto minmax(0, 1fr); }
+  #trayectoria .frame--photo { aspect-ratio: auto; height: auto; min-height: 420px; margin-top: var(--s-6); }
+  #sobre-mi .panel { --p-h: 320px; margin-top: var(--s-6); }
+
+  /* the SDD steps stand one under another (the moment rests there); the section keeps its two screens */
+  main > #metodo[data-moment]:not(.is-live) { min-height: 200vh; min-height: 200lvh; }
+  #metodo:not(.is-live) .mo-pc__visual { min-height: 330px; display: grid; align-content: center; }
+}

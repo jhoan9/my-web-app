@@ -1,15 +1,20 @@
 {
-  "short_name": "Jhoan Castro Santacruz",
-  "name": "Portfolio Jhoan Castro Santacruz",
+  "short_name": "Jhoan Castro",
+  "name": "Portafolio de Jhoan Castro Santacruz",
   "icons": [
     {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
       "src": "Jhoan.jpg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "sizes": "565x743",
+      "type": "image/jpeg"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#dfdedb",
+  "background_color": "#dfdedb"
 }
