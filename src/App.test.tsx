@@ -1,9 +1,12 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders the headline and the new SMPP experience", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(
+    screen.getByRole("heading", { level: 1, name: /Desarrollador de software en Popayán/i })
+  ).toBeInTheDocument();
+  expect(screen.getByRole("heading", { level: 2, name: /Notificaciones de contravenciones/i })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { level: 2, name: /especificaciones/i })).toBeInTheDocument();
 });
